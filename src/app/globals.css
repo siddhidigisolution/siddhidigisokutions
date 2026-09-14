@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* next-themes toggles a `dark` class on <html>; redefine Tailwind's `dark:`
+   variant to key off that class instead of the OS media query, so a manual
+   toggle can override system preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --surface: #ffffff;
+  --surface-alt: #f8f7fc;
+  --surface-raised: #ffffff;
+
+  --ink: #151327;
+  --ink-soft: #3c3950;
+  --ink-muted: #6b6785;
+  --ink-faint: #8a86a3;
+
+  --border: rgba(0, 0, 0, 0.1);
+  --border-soft: rgba(0, 0, 0, 0.06);
+
+  --accent-from: #8a7bf0;
+  --accent-to: #5b3fe0;
+  --accent-solid: #6d5ce0;
+  --accent-tint: #f3f0ff;
+  --accent-tint-border: #c9beff;
+
+  --grain-vignette: rgba(28, 20, 58, 0.05);
+}
+
+.dark {
+  --background: #14111f;
+  --foreground: #f3f1fa;
+
+  --surface: #14111f;
+  --surface-alt: #191527;
+  --surface-raised: #1e1a30;
+
+  --ink: #f5f3fb;
+  --ink-soft: #d8d4e8;
+  --ink-muted: #a8a2c0;
+  --ink-faint: #7d7796;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(255, 255, 255, 0.08);
+
+  --accent-from: #a596ff;
+  --accent-to: #8f6bf0;
+  --accent-solid: #ab98ff;
+  --accent-tint: #241f3a;
+  --accent-tint-border: #4a3f7a;
+
+  --grain-vignette: rgba(0, 0, 0, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-surface-raised: var(--surface-raised);
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+
+  --color-accent-from: var(--accent-from);
+  --color-accent-to: var(--accent-to);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-tint-border: var(--accent-tint-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+/* GSAP SplitText wraps each word in its own block-level div, which breaks
+   background-clip:text gradient spans (the property doesn't inherit to
+   descendants). Forcing background-image to inherit down restores the clip
+   on each split word div. */
+.reveal-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.reveal-gradient * {
+  background-image: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* very subtle film-grain + vignette, used on the hero */
+.hero-grain {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 160px 160px;
+}
+
+.hero-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 100% at 50% 45%,
+    transparent 55%,
+    var(--grain-vignette) 100%
+  );
+}
+
+@keyframes scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* shared idle-motion keyframes for the services visualizers */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-y-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1.2deg); }
+}
+@keyframes float-y-rev {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(9px); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -40; }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+@keyframes cursor-move {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(38px, 14px); }
+  50% { transform: translate(60px, 46px); }
+  75% { transform: translate(14px, 40px); }
+}
+@keyframes playhead-move {
+  0% { left: 6%; }
+  100% { left: 92%; }
+}
+
+.animate-float-y { animation: float-y 5s ease-in-out infinite; }
+.animate-float-y-slow { animation: float-y-slow 7.5s ease-in-out infinite; }
+.animate-float-y-rev { animation: float-y-rev 6s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 18s linear infinite; }
+.animate-dash-flow { animation: dash-flow 1.6s linear infinite; }
+.animate-pulse-soft { animation: pulse-soft 2.4s ease-in-out infinite; }
+.animate-cursor-move { animation: cursor-move 6s ease-in-out infinite; }
+.animate-playhead { animation: playhead-move 5s linear infinite alternate; }
