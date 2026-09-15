@@ -108,7 +108,7 @@ export default function ServiceNavigation({
               className={[
                 "flex shrink-0 items-center gap-2 rounded-full border px-4 py-2.5 text-[13px] font-medium transition-colors duration-300",
                 active
-                  ? "border-transparent bg-gradient-to-r from-accent-from to-accent-to text-white shadow-[0_10px_24px_-8px_rgba(91,63,224,0.5)]"
+                  ? "border-transparent bg-gradient-to-r from-accent-from to-accent-cta-to text-white shadow-[0_10px_24px_-8px_rgba(91,63,224,0.5)]"
                   : "border-black/10 bg-white/60 text-ink-soft dark:border-white/10 dark:bg-surface-raised/60",
               ].join(" ")}
             >

@@ -109,7 +109,7 @@ export default function Header() {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-accent-from to-accent-to px-[18px] py-2 text-[12.5px] font-semibold text-white shadow-[0_6px_18px_-6px_rgba(91,63,224,0.55)] transition-all duration-[400ms] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-6px_rgba(91,63,224,0.6)] sm:inline-flex"
+            className="hidden items-center gap-1.5 rounded-full bg-gradient-to-r from-accent-from to-accent-cta-to px-[18px] py-2 text-[12.5px] font-semibold text-white shadow-[0_6px_18px_-6px_rgba(91,63,224,0.55)] transition-all duration-[400ms] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-6px_rgba(91,63,224,0.6)] sm:inline-flex"
           >
             Start a Project <span aria-hidden>↗</span>
           </a>

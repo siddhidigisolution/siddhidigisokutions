@@ -25,7 +25,7 @@ export default function PillSelector({
               "inline-flex min-h-[40px] items-center gap-1.5 rounded-full border px-4 py-2 text-[13px] font-medium transition-all duration-300",
               "[transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
               active
-                ? "scale-[1.03] border-transparent bg-gradient-to-r from-accent-from to-accent-to text-white shadow-[0_10px_22px_-10px_rgba(91,63,224,0.55)]"
+                ? "scale-[1.03] border-transparent bg-gradient-to-r from-accent-from to-accent-cta-to text-white shadow-[0_10px_22px_-10px_rgba(91,63,224,0.55)]"
                 : "border-black/10 bg-surface text-ink-soft hover:border-accent-tint-border hover:bg-accent-tint dark:border-white/10",
             ].join(" ")}
           >

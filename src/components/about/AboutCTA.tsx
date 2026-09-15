@@ -51,7 +51,7 @@ export default function AboutCTA() {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onClick={() => setClicked(true)}
-            className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-to px-6 py-3.5 text-[13.5px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(91,63,224,0.55)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_rgba(91,63,224,0.65)] active:translate-y-0 active:scale-[0.97]"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-cta-to px-6 py-3.5 text-[13.5px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(91,63,224,0.55)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-8px_rgba(91,63,224,0.65)] active:translate-y-0 active:scale-[0.97]"
           >
             Start a Project
             <span className="inline-block transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">

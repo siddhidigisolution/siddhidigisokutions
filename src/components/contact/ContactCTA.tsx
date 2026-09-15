@@ -26,7 +26,7 @@ export default function ContactCTA({
         <button
           type="button"
           onClick={onStartProject}
-          className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[14px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-to hover:shadow-[0_16px_32px_-14px_rgba(91,63,224,0.55)] dark:bg-accent-solid"
+          className="group mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-[14px] font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-to hover:shadow-[0_16px_32px_-14px_rgba(91,63,224,0.55)] dark:bg-accent-cta-to dark:hover:bg-accent-from"
         >
           Start a Project
           <span className="transition-transform duration-300 group-hover:translate-x-1">↗</span>

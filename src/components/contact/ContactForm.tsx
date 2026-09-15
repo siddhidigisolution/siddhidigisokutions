@@ -229,7 +229,7 @@ const ContactForm = forwardRef<
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#home"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-to px-6 py-3 text-[13.5px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(91,63,224,0.55)] transition-transform duration-300 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-cta-to px-6 py-3 text-[13.5px] font-semibold text-white shadow-[0_10px_30px_-8px_rgba(91,63,224,0.55)] transition-transform duration-300 hover:-translate-y-0.5"
           >
             Back to Home <span aria-hidden>↗</span>
           </a>
@@ -382,7 +382,7 @@ const ContactForm = forwardRef<
           onMouseEnter={() => lookAt("submit")}
           onMouseLeave={lookAway}
           className={[
-            "group relative flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-to px-8 py-4 text-[15px] font-semibold text-white shadow-[0_16px_40px_-14px_rgba(91,63,224,0.6)] transition-all duration-400",
+            "group relative flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent-from to-accent-cta-to px-8 py-4 text-[15px] font-semibold text-white shadow-[0_16px_40px_-14px_rgba(91,63,224,0.6)] transition-all duration-400",
             "[transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
             status === "submitting" ? "opacity-80" : "hover:scale-[1.015] hover:shadow-[0_22px_50px_-14px_rgba(91,63,224,0.7)]",
           ].join(" ")}

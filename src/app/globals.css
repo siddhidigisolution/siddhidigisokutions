@@ -21,11 +21,16 @@
   --border: rgba(35, 20, 80, 0.14);
   --border-soft: rgba(35, 20, 80, 0.09);
 
-  --accent-from: #8a7bf0;
+  --accent-from: #7659ee;
   --accent-to: #5b3fe0;
   --accent-solid: #6d5ce0;
   --accent-tint: #eee7ff;
   --accent-tint-border: #b3a0fb;
+  /* Dedicated gradient-end for buttons with white label text (bg-gradient
+     from-accent-from to-accent-cta-to). Equal to --accent-to in light mode,
+     but kept as its own token because dark mode needs a darker value here
+     than --accent-to's other job as readable link/icon text color allows. */
+  --accent-cta-to: #5b3fe0;
 
   --grain-vignette: rgba(55, 35, 110, 0.09);
 }
@@ -46,11 +51,15 @@
   --border: rgba(255, 255, 255, 0.12);
   --border-soft: rgba(255, 255, 255, 0.08);
 
-  --accent-from: #a596ff;
+  --accent-from: #7659ee;
   --accent-to: #8f6bf0;
   --accent-solid: #ab98ff;
   --accent-tint: #241f3a;
   --accent-tint-border: #4a3f7a;
+  /* Darker than --accent-to on purpose: white button labels need ~4.5:1+
+     against this, which --accent-to (tuned instead for text-on-dark-bg
+     legibility, e.g. "Explore Web Solutions" links) can't provide here. */
+  --accent-cta-to: #6347d9;
 
   --grain-vignette: rgba(0, 0, 0, 0.25);
 }
@@ -78,6 +87,7 @@
   --color-accent-solid: var(--accent-solid);
   --color-accent-tint: var(--accent-tint);
   --color-accent-tint-border: var(--accent-tint-border);
+  --color-accent-cta-to: var(--accent-cta-to);
 }
 
 html {
