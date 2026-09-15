@@ -34,8 +34,8 @@ const ServiceNode = forwardRef<HTMLButtonElement, Props>(function ServiceNode(
         "[transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
         hidden ? "pointer-events-none opacity-0" : "opacity-100",
         hovered
-          ? "z-20 scale-[1.08] border-white/80 bg-white/80 shadow-[0_18px_45px_-12px_rgba(76,58,140,0.35)] dark:border-white/25 dark:bg-surface-raised/90"
-          : "z-10 scale-100 border-white/40 bg-white/45 shadow-[0_8px_24px_-10px_rgba(30,20,70,0.18)] dark:border-white/10 dark:bg-surface-raised/60",
+          ? "z-20 scale-[1.08] border-black/15 bg-white/95 shadow-[0_18px_45px_-12px_rgba(76,58,140,0.35)] dark:border-white/25 dark:bg-surface-raised/90"
+          : "z-10 scale-100 border-black/10 bg-white/75 shadow-[0_8px_24px_-10px_rgba(30,20,70,0.18)] dark:border-white/10 dark:bg-surface-raised/60",
         dimmed && !hovered ? "opacity-35" : "",
       ].join(" ")}
       style={{ willChange: "transform" }}
