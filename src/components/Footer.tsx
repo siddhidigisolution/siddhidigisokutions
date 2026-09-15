@@ -10,7 +10,7 @@ import {
   SOCIAL_LINKS,
 } from "./contact/contactContent";
 
-const NAV_LINKS = ["Home", "Services", "Contact"];
+const NAV_LINKS = ["Home", "Services", "About", "Contact"];
 
 function FooterRobot() {
   const [blink, setBlink] = useState(false);

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./shared/ThemeToggle";
 
-const NAV_ITEMS = ["Home", "Services", "Contact"];
+const NAV_ITEMS = ["Home", "Services", "About", "Contact"];
 const HEADER_TOP_OFFSET = 48; // matches top-12
 const CLEARANCE = 16; // fade out slightly before actual overlap, not on contact
 
