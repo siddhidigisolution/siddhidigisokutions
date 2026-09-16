@@ -93,7 +93,14 @@ export default function ServiceVisualizer({ activeService }: { activeService: Se
     );
 
     return () => {
+      // if this transition gets interrupted by another tab being picked
+      // before it finishes (tl.kill() stops it mid-tween), snap the stage
+      // and particles back to their normal resting state instead of
+      // leaving the visual permanently faded/blurred/invisible — the next
+      // effect run will animate a fresh transition from this clean baseline
       tl.kill();
+      gsap.set(stage, { opacity: 1, scale: 1, filter: "none" });
+      gsap.set(particleEls, { opacity: 0, x: 0, y: 0, scale: 0.4 });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeService]);
