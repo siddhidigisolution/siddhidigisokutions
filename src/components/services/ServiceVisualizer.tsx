@@ -111,7 +111,7 @@ export default function ServiceVisualizer({ activeService }: { activeService: Se
 
       <div
         ref={stageRef}
-        className="relative h-full w-full overflow-hidden rounded-[32px] border border-white/70 bg-white/50 shadow-[0_30px_70px_-30px_rgba(76,58,140,0.35)] backdrop-blur-2xl"
+        className="relative h-full w-full overflow-hidden rounded-[32px] border border-border-soft bg-surface/85 shadow-[0_30px_70px_-30px_rgba(76,58,140,0.35)]"
       >
         <Visual />
       </div>
